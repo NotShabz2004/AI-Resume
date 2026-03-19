@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RunReady Motivation</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>🏃 RunReady Motivation</h1>
+      <p class="subtitle">Personalized AI motivation for runners and marathoners.</p>
+
+      <form id="quote-form" class="card">
+        <label>
+          Your name
+          <input name="name" required maxlength="80" placeholder="Alex" />
+        </label>
+
+        <label>
+          Who/what are you running for?
+          <input
+            name="running_for"
+            required
+            maxlength="200"
+            placeholder="My family"
+          />
+        </label>
+
+        <label>
+          Biggest challenge today
+          <input
+            name="main_challenge"
+            required
+            maxlength="200"
+            placeholder="Self-doubt after km 30"
+          />
+        </label>
+
+        <div class="row">
+          <label>
+            Race type
+            <select name="race_type">
+              <option>5K</option>
+              <option>10K</option>
+              <option>Half Marathon</option>
+              <option selected>Marathon</option>
+              <option>Ultra</option>
+            </select>
+          </label>
+
+          <label>
+            Tone
+            <select name="tone">
+              <option value="balanced" selected>Balanced</option>
+              <option value="intense">Intense</option>
+              <option value="supportive">Supportive</option>
+            </select>
+          </label>
+
+          <label>
+            Number of quotes
+            <input name="quote_count" type="number" min="1" max="8" value="5" />
+          </label>
+        </div>
+
+        <label>
+          TTS provider
+          <select name="tts_provider" id="tts-provider">
+            <option value="browser" selected>Browser (free)</option>
+            <option value="elevenlabs">ElevenLabs (API key on backend)</option>
+          </select>
+        </label>
+
+        <button id="submit-btn" type="submit">Generate Motivation</button>
+      </form>
+
+      <section id="status" aria-live="polite"></section>
+      <section id="results" class="results"></section>
+    </main>
+
+    <script src="/assets/app.js" defer></script>
+  </body>
+</html>
